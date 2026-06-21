@@ -140,11 +140,11 @@ cat > /tmp/meeting_minutes.md << 'MINUTES'
 [纪要内容]
 MINUTES
 
-# 创建飞书文档
+# 创建飞书文档（lark-cli v2 语法）
 cat /tmp/meeting_minutes.md | lark-cli --profile {profile} docs +create --as user \
-  --title "[日期]_[会议主题]_纪要" \
-  --markdown - \
-  --folder-token {doc_folder_token}
+  --doc-format markdown \
+  --content - \
+  --parent-token {doc_folder_token}
 ```
 
 解析返回 JSON 的 `data.url` 作为纪要链接，立即输出给用户。

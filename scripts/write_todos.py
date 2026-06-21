@@ -69,7 +69,7 @@ def fetch_existing_records(profile, base_token, table_id):
         ["base", "+record-list", "--as", "user",
          "--base-token", base_token,
          "--table-id", table_id,
-         "--page-size", "500"],
+         "--page-size", "200"],
         profile=profile,
     )
     if not resp or "data" not in resp:
