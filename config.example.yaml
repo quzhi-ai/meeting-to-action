@@ -1,0 +1,51 @@
+# Meeting to Action 配置文件
+# 复制此文件为 config.yaml，填入你的实际配置
+# cp config.example.yaml config.yaml
+
+# ========================================
+# 飞书配置
+# ========================================
+feishu:
+  # lark-cli profile 名称
+  # 运行 lark-cli profile list 查看已有 profile
+  # 如果只有一个 profile，填 "default"
+  profile: "default"
+
+  # 会议纪要存放的飞书文件夹 token
+  # 在飞书云盘中打开目标文件夹，URL 最后一段即为 token
+  # 例如 https://xxx.feishu.cn/drive/folder/ABC123 → token 是 ABC123
+  doc_folder_token: ""
+
+  # 多维表格配置（用于存储待办）
+  bitable:
+    # 多维表格 token（URL 中 /base/XXX 部分）
+    base_token: ""
+    # 待办数据表的 table_id（URL 中 ?table=XXX 部分）
+    table_id: ""
+
+# ========================================
+# 通知方式（至少启用一种）
+# ========================================
+notification:
+  # 方式一：飞书 IM 消息（推荐，配置简单）
+  feishu_im:
+    enabled: true
+    # 负责人名字 → 飞书 open_id
+    # 获取方式：飞书管理后台 → 组织架构 → 点击成员 → 复制 open_id
+    # 或用 lark-cli: lark-cli contact +search --query "张三"
+    contacts:
+      # 张三: "ou_xxxxxxxxxxxxxxxxxxxx"
+      # 李四: "ou_yyyyyyyyyyyyyyyyyyyy"
+
+  # 方式二：邮件通知（可选）
+  email:
+    enabled: false
+    smtp_host: "smtp.example.com"
+    smtp_port: 465
+    smtp_user: ""
+    smtp_pass: ""
+    sender_name: "会议助手"
+    # 负责人名字 → 邮箱
+    contacts:
+      # 张三: "zhangsan@example.com"
+      # 李四: "lisi@example.com"

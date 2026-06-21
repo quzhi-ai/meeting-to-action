@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="utf-8"></head>
+<body style="font-family:-apple-system,BlinkMacSystemFont,'PingFang SC','Microsoft YaHei',sans-serif;margin:0;padding:20px;background:#f5f5f5;">
+<div style="max-width:600px;margin:0 auto;background:#fff;padding:32px;">
+
+  <h2 style="font-size:18px;color:#1a1a1a;margin:0 0 8px;font-weight:600;">
+    会后待办确认
+  </h2>
+  <p style="font-size:14px;color:#888;margin:0 0 24px;padding-bottom:16px;border-bottom:2px solid #1a1a1a;">
+    {{owner}} | {{meeting_title}}
+  </p>
+
+  <table style="width:100%;border-collapse:collapse;">
+    {{todo_rows}}
+  </table>
+
+  <div style="margin-top:24px;padding-top:16px;border-top:1px solid #e8e8e8;font-size:13px;color:#888;">
+    <a href="{{minutes_url}}" style="color:#045e81;text-decoration:none;">查看会议纪要</a>
+    <span style="margin:0 8px;">|</span>
+    收到后请确认，如有疑问直接回复此邮件。
+  </div>
+
+</div>
+</body>
+</html>
